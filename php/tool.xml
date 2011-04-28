@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool xmlns="http://www.ivoa.net/xml/CEA/types/v1.1"
+   id="ivo://helio_ivo.mssl.ucl.ac.uk/helio_cea/goesplotter" interface="simple">
+ <input>
+  <parameter id="START_DATE" indirect="false">
+   <value>2000-01-01T09:00:00</value>
+  </parameter>
+  <parameter id="END_DATE" indirect="false">
+   <value>2000-01-02T20:00:00</value>
+  </parameter>
+ </input>
+ <output>
+  <parameter id="OUTPUT" indirect="false">
+   <value></value>
+  </parameter>
+ </output>
+</tool>

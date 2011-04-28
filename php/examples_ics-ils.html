@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+ <head>
+  <title>Examples of SQL Queries to the ICS and ILS</title>
+ </head>
+ <body>
+  <h2>SQL Code Examples</h2>
+  Examples of SQL Queries to the <b>HELIO</b>
+  Instrument Capabilities Service (ICS) and Instrument Location Service (ILS).
+<!--           -->
+  <h3>ICS</h3>
+<pre>
+DESCRIBE instruments
+SELECT DISTINCT inst_oe2 FROM instrument
+
+SELECT * FROM instrument LIMIT 100
+SELECT * FROM instrument WHERE observatory_name='SOHO'
+SELECT * FROM instrument WHERE (inst_oe2='EUV' OR inst_oe2='SXR') AND keywords LIKE '%imager%'
+SELECT * FROM instrument WHERE (inst_oe2='EUV' OR inst_oe2='SXR') AND keywords LIKE '%spectrometer%'
+SELECT * FROM instrument WHERE (keywords LIKE '%spectrometer%' or keywords LIKE '%imager%') AND (inst_oe2='EUV' OR inst_oe2='SXR')
+SELECT * FROM instrument WHERE inst_od1!='Earth' AND keywords LIKE '%magnetometer%'
+SELECT * FROM instrument WHERE inst_od1='Earth' AND keywords LIKE '%imager%'
+SELECT * FROM instrument WHERE keywords LIKE '%coronag%'
+SELECT * FROM instrument WHERE group_name like '_GONG'
+select * from instrument where '2008-12-11 00:00:00'<=time_end and '2008-12-17 23:59:59'>=time_start and inst_od1='Earth'
+
+DESCRIBE observatory
+SELECT * FROM observatory LIMIT 20
+SELECT * FROM observatory WHERE name='galileo'SELECT * FROM observatory WHERE name LIKE 'GOES%'SELECT name,loc_gen,loc_p1,loc_p2,sat_id FROM observatory WHERE loc_gen='ERO' OR loc_gen='LPO' LIMIT 100
+SELECT name,loc_gen,loc_p1,loc_p2,sat_id FROM observatory WHERE loc_gen <> 'GBO' and loc_gen <> 'ERO' LIMIT 100
+
+SELECT * FROM instrument INNER JOIN observatory ON instrument.observatory_name=observatory.name AND observatory.loc_gen='GBO'
+SELECT * FROM instrument INNER JOIN observatory ON instrument.observatory_name=observatory.name AND observatory.loc_gen='GBO' AND instrument.keywords LIKE '%coronag%'  
+
+SELECT * FROM instrument INNER JOIN ics_pat ON instrument.obsinst_key=ics_pat.helio_obsint AND ics_pat.cnt<>'' AND instrument.keywords LIKE '%coronag%'
+SELECT * FROM instrument INNER JOIN ics_pat ON instrument.obsinst_key=ics_pat.helio_obsint AND ics_pat.cnt<>'' AND (instrument.inst_od1 LIKE '%Sun%')
+SELECT * FROM instrument INNER JOIN ics_pat ON instrument.obsinst_key=ics_pat.helio_obsint AND (instrument.inst_od1 LIKE '%Sun%')
+<!--
+DESCRIBE flybys
+SELECT * FROM flybys LIMIT 100
+SELECT * FROM flybys WHERE fly_spa_mission='Galileo' LIMIT 100
+
+-->
+DESCRIBE instrument; DESCRIBE instrument_observatory; DESCRIBE observatory; DESCRIBE flybys
+</pre>
+<!--           -->
+  <h3>ILS</h3>
+<pre>
+SELECT DISTINCT target_obj FROM trajectories
+
+SELECT * FROM trajectories WHERE exe_date_time BETWEEN '2000-01-01' AND '2000-01-03' LIMIT 30
+SELECT * FROM trajectories ORDER BY exe_date_time LIMIT 30
+
+SELECT * FROM trajectories WHERE target_obj='GALILEO' LIMIT 50
+SELECT * FROM trajectories WHERE target_obj='GALILEO' OR target_obj='CASSINI' LIMIT 50
+
+SELECT * FROM trajectories WHERE exe_date_time BETWEEN '2000-01-01' AND '2000-01-20' and (target_obj='GALILEO' OR target_obj='CASSINI') LIMIT 50
+
+SELECT * FROM keyevents 
+SELECT * FROM keyevents WHERE type='flyby'
+SELECT * FROM keyevents WHERE observatory='GALILEO'
+
+select * from obs_hbo where time_start between '2000-10-28 00:00:00' and '2011-11-03 23:59:59' 
+
+DESCRIBE keyevents; DESCRIBE trajectories; DESCRIBE obs_hbo
+</pre>
+<!--           -->
+  <h3>General</h3>
+<pre>
+SHOW tables
+select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='observatory'
+</pre>
+<br>
+<hr>
+<a href="http://www.firstsql.com/tutor1.htm" target="_blank">SQL Tutorial</a>
+ </body>
+</html>

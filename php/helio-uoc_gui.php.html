@@ -1,0 +1,622 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>HELIO UOC</title>
+  <link rel="stylesheet" href="helio-tester.php_files/sec.css" type="text/css">
+  <meta content="">
+  <link rel="SHORTCUT ICON" href="http://140.105.77.30/hec/logo_inv2.gif">
+ </head>
+ <body>
+  <table>
+   <tbody>
+    <tr>
+     <td><a href="http://www.helio-vo.eu/"><img src="helio-tester.php_files/helio_logo.gif" border="0"></a></td>
+     <td><font color="red" size="+3"><b>Unified Observing Catalogue</b></font></td>
+     <td><a href="http://ec.europa.eu/research/fp7/index_en.cfm?pg=capacities"><img src="helio-tester.php_files/FP7-cap-RGB12.gif" border="0" width="95%"></a>
+     </td>
+    </tr>
+   </tbody>
+  </table><hr>
+<!--
+  <h1>HelioQueryService tester</h1>
+-->
+  <form method="get" action="http://140.105.77.30/hec/helio-tester2.php" target="_blank">
+   <p>
+   <table>
+    <tbody>
+     <tr>
+      <td><p>Starting date:</p></td>
+      <td>&nbsp;&nbsp;
+       <select name="y_from">
+        <option value="1975">1975</option>
+        <option value="1976">1976</option>
+        <option value="1977">1977</option>
+        <option value="1978">1978</option>
+        <option value="1979">1979</option>
+        <option value="1980">1980</option>
+        <option value="1981">1981</option>
+        <option value="1982">1982</option>
+        <option value="1983">1983</option>
+        <option value="1984">1984</option>
+        <option value="1985">1985</option>
+        <option value="1986">1986</option>
+        <option value="1987">1987</option>
+        <option value="1988">1988</option>
+        <option value="1989">1989</option>
+        <option value="1990">1990</option>
+        <option value="1991">1991</option>
+        <option value="1992">1992</option>
+        <option value="1993">1993</option>
+        <option value="1994">1994</option>
+        <option value="1995">1995</option>
+        <option value="1996">1996</option>
+        <option value="1997">1997</option>
+        <option value="1998">1998</option>
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+        <option value="2001">2001</option>
+        <option value="2002">2002</option>
+        <option value="2003">2003</option>
+        <option value="2004">2004</option>
+        <option value="2005">2005</option>
+        <option value="2006">2006</option>
+        <option value="2007">2007</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011" selected="selected">2011</option>
+       </select>
+       <select name="mo_from">
+        <option value="1">January</option>
+        <option value="2" selected="selected">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+       </select>
+       <select name="d_from">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10" selected="selected">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+       </select>&nbsp;&nbsp;
+       <select name="h_from">
+        <option value="0" selected="selected">00</option>
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+        <option value="4">04</option>
+        <option value="5">05</option>
+        <option value="6">06</option>
+        <option value="7">07</option>
+        <option value="8">08</option>
+        <option value="9">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+       </select>
+       <select name="mi_from">
+        <option value="0" selected="selected">00</option>
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+        <option value="4">04</option>
+        <option value="5">05</option>
+        <option value="6">06</option>
+        <option value="7">07</option>
+        <option value="8">08</option>
+        <option value="9">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59">59</option>
+       </select>
+       <select name="s_from">
+        <option value="0" selected="selected">00</option>
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+        <option value="4">04</option>
+        <option value="5">05</option>
+        <option value="6">06</option>
+        <option value="7">07</option>
+        <option value="8">08</option>
+        <option value="9">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59">59</option>
+       </select>
+      </td>
+     </tr>
+     <tr>
+      <td>Ending date:</td>
+      <td>&nbsp;&nbsp;
+       <select name="y_to">
+        <option value="1975">1975</option>
+        <option value="1976">1976</option>
+        <option value="1977">1977</option>
+        <option value="1978">1978</option>
+        <option value="1979">1979</option>
+        <option value="1980">1980</option>
+        <option value="1981">1981</option>
+        <option value="1982">1982</option>
+        <option value="1983">1983</option>
+        <option value="1984">1984</option>
+        <option value="1985">1985</option>
+        <option value="1986">1986</option>
+        <option value="1987">1987</option>
+        <option value="1988">1988</option>
+        <option value="1989">1989</option>
+        <option value="1990">1990</option>
+        <option value="1991">1991</option>
+        <option value="1992">1992</option>
+        <option value="1993">1993</option>
+        <option value="1994">1994</option>
+        <option value="1995">1995</option>
+        <option value="1996">1996</option>
+        <option value="1997">1997</option>
+        <option value="1998">1998</option>
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+        <option value="2001">2001</option>
+        <option value="2002">2002</option>
+        <option value="2003">2003</option>
+        <option value="2004">2004</option>
+        <option value="2005">2005</option>
+        <option value="2006">2006</option>
+        <option value="2007">2007</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011" selected="selected">2011</option>
+       </select>
+       <select name="mo_to">
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3" selected="selected">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+       </select>
+       <select name="d_to">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10" selected="selected">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+       </select>&nbsp;&nbsp;
+       <select name="h_to">
+        <option value="0">00</option>
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+        <option value="4">04</option>
+        <option value="5">05</option>
+        <option value="6">06</option>
+        <option value="7">07</option>
+        <option value="8">08</option>
+        <option value="9">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23" selected="selected">23</option>
+       </select>
+       <select name="mi_to">
+        <option value="0">00</option>
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+        <option value="4">04</option>
+        <option value="5">05</option>
+        <option value="6">06</option>
+        <option value="7">07</option>
+        <option value="8">08</option>
+        <option value="9">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59" selected="selected">59</option>
+       </select>
+       <select name="s_to">
+        <option value="0">00</option>
+        <option value="1">01</option>
+        <option value="2">02</option>
+        <option value="3">03</option>
+        <option value="4">04</option>
+        <option value="5">05</option>
+        <option value="6">06</option>
+        <option value="7">07</option>
+        <option value="8">08</option>
+        <option value="9">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59" selected="selected">59</option>
+       </select>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+<!--
+   </p><h1>HEC</h1>
+   <select name="hec">
+    <option selected="selected" value="goes_xray_flare">goes_xray_flare</option>
+    <option value="halpha_flares_event">halpha_flares_event</option>
+    <option value="hessi_flare">hessi_flare</option>
+    <option value="kso_flare">kso_flare</option>
+    <option value="sgas_event">sgas_event</option>
+    <option value="soho_camp">soho_camp</option>
+    <option value="yohkoh_flare_list">yohkoh_flare_list</option>
+    <option value="yohkoh_sxt_trace_list">yohkoh_sxt_trace_list</option>
+    <option value="lasco_cme_cat">lasco_cme_cat</option>
+    <option value="noaa_proton_event">noaa_proton_event</option>
+    <option value="bas_magnetic_storms">bas_magnetic_storms</option>
+    <option value="gle_list">gle_list</option>
+    <option value="aastar_list">aastar_list</option>
+    <option value="apstar_list">apstar_list</option>
+    <option value="ssc_list">ssc_list</option>
+    <option value="forbush_list">forbush_list</option>
+    <option value="eit_list">eit_list</option>
+    <option value="lasco_cme_list">lasco_cme_list</option>
+    <option value="srs_list">srs_list</option>
+    <option value="dsd_list">dsd_list</option>
+    <option value="sidc_sunspot_number">sidc_sunspot_number</option>
+    <option value="drao_10cm_flux">drao_10cm_flux</option>
+    <option value="solar_wind_event">solar_wind_event</option>
+    <option value="hi_cme_list">hi_cme_list</option>
+    <option value="hi_event">hi_event</option>
+    <option value="wind_imf_mag_cloud">wind_imf_mag_cloud</option>
+    <option value="wind_imf_bow_shock">wind_imf_bow_shock</option>
+    <option value="istp_solar_wind_cat">istp_solar_wind_cat</option>
+    <option value="soho_pm_ips">soho_pm_ips</option>
+    <option value="wind_imf_ips">wind_imf_ips</option>
+    <option value="wind_solar_wind_times">wind_solar_wind_times</option>
+    <option value="imp8_solar_wind_times">imp8_solar_wind_times</option>
+    <option value="tsrs_event_list">tsrs_event_list</option>
+    <option value="latest_gev_flare">latest_gev_flare</option>
+    <option value="gevloc_flares">gevloc_flares</option>
+    <option value="wind_waves_type_ii_burst">wind_waves_type_ii_burst</option>
+    <option value="waves_exp_wind_stereo">waves_exp_wind_stereo</option>
+    <option value="ulysses_swoops_icme">ulysses_swoops_icme</option>
+    <option value="stereo_euvi_catalog">stereo_euvi_catalog</option>
+    <option value="catalogues">catalogues</option>
+   </select>
+   <p><input name="Search" value="GO HEC" type="submit"><br></p>
+<hr>
+-->
+   <h2>UOC</h2>
+   <select name="uoc">
+    <option selected="selected" value="planetary_cat">planetary_cat</option>
+    <option value="instruments">&nbsp; instruments</option>
+    <option value="timeinterval">&nbsp; timeinterval</option>
+    <option value="">------------</option>
+    <option value="ghan_cat">ghan_cat</option>
+    <option value="">=========</option>
+    <option value="eis_cat">eis_cat</option>
+    <option value="cds_cat">cds_cat</option>
+    <option value="sxt_cat">sxt_cat</option>
+    <option value="trace_cat">trace_cat</option>
+    <option value="">------------</option>
+    <option value="solar_cat">solar_cat</option>
+   </select>
+   <p>instrument code: <input name="instr_code" type="text">
+   </p>
+   <p><input name="Search" value="GO UOC" type="submit">
+   </p>
+   <p>
+
+   <hr>
+
+<h2>UOC free SQL</h2>
+<!--
+   <p>UOC free SQL:
+    <input size="100" name="uoc_sql" type="text">
+-->
+   <textarea name="uoc_sql" cols="80" rows="8">select * from ghan_cat limit 10</textarea>
+
+   </p>
+   <p>
+    <input name="Search" value="GO UOC freeSQL" type="submit">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!--
+   </p>
+   <p>
+-->
+    <select name="stilts_out">
+     <option selected="selected" value="text">text</option>
+     <option value="votable-tabledata">votable-tabledata</option>
+     <option value="html">html</option>
+    </select>
+   </p>
+
+  </form>
+
+  <hr>
+   <div align="right">
+    <table>
+     <tbody>
+      <tr>
+       <td><small>Designed and maintained by <a href="http://www.oats.inaf.it/">INAF-TRIESTE ASTRONOMICAL OBSERVATORY</a>
+        </small>
+       </td>
+       <td><a href="http://www.inaf.it/" target="_blank"><img src="helio-tester.php_files/Inaf-circ-colore-N_10.gif" border="1" width="50%"></a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+ </body>
+</html>
